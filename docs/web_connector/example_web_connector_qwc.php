@@ -16,15 +16,15 @@ ini_set('display_errors', 1);
 /**
  * Require the utilities class
  */
-require_once '../QuickBooks.php';
+require_once 'http://localhost/Github/My_Projects/QB-Desktop/QuickBooks.php';
 
 $name = 'My QuickBooks SOAP Server';				// A name for your server (make it whatever you want)
 $descrip = 'An example QuickBooks SOAP Server';		// A description of your server 
 
-$appurl = 'https://your-domain-name/path/to/soap/server.php';		// This *must* be httpS:// (path to your QuickBooks SOAP server)
-$appsupport = 'https://your-domain-name/get-help-here.php'; 		// This *must* be httpS:// and the domain name must match the domain name above
+$appurl = 'http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/appurl.php';		// This *must* be httpS:// (path to your QuickBooks SOAP server)
+$appsupport = 'http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/appsupport.php'; 		// This *must* be httpS:// and the domain name must match the domain name above
 
-$username = 'your-quickbooks-username';		// This is the username you stored in the 'quickbooks_user' table by using QuickBooks_Utilities::createUser()
+$username = 'quickbooks';		// This is the username you stored in the 'quickbooks_user' table by using QuickBooks_Utilities::createUser()
 
 $fileid = '57F3B9B6-86F1-4FCC-B1FF-966DE1813D20';		// Just make this up, but make sure it keeps that format
 $ownerid = '57F3B9B6-86F1-4FCC-B1FF-166DE1813D20';		// Just make this up, but make sure it keeps that format
