@@ -576,7 +576,7 @@ function _quickbooks_salesreceipt_add_response($requestID, $user, $action, $ID, 
  */
 function _quickbooks_error_stringtoolong($requestID, $user, $action, $ID, $extra, &$err, $xml, $errnum, $errmsg)
 {
-	mail('your-email@your-domain.com', 
+	mail('barani@bizappln.com', 
 		'QuickBooks error occured!', 
 		'QuickBooks thinks that ' . $action . ': ' . $ID . ' has a value which will not fit in a QuickBooks field...');
 }
