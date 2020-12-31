@@ -2,7 +2,7 @@
 <QBWCXML>
   <AppName>QuickBooks Integrator</AppName>
   <AppID></AppID>
-  <AppURL>http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/example_web_connector.php</AppURL>
+  <AppURL>http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/appurl.php</AppURL>
   <AppDescription></AppDescription>
   <AppSupport>http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/appsupport.php</AppSupport>
   <UserName>quickbooks</UserName>
