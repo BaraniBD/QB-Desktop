@@ -349,7 +349,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 			// @todo Should this be implemented...?
 		}
 		
-		print($sql . "\n\n");
+		// print($sql . "\n\n");
 		$res = mysqli_query($this->_conn,$sql);
 		//mysql_query("INSERT INTO quickbooks_log ( msg, log_datetime ) VALUES ( '" . mysql_real_escape_string($sql) . "', NOW() ) ");
 		
@@ -380,8 +380,8 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		
 		if (!$res)
 		{
-			$errnum = mysql_errno($this->_conn);
-			$errmsg = mysql_error($this->_conn);
+			$errnum = mysqli_errno($this->_conn);
+			$errmsg = mysqli_error($this->_conn);
 			
 			//print($sql);
 			
@@ -434,7 +434,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	public function affected()
 	{
-		return mysql_affected_rows($this->_conn);
+		return mysqli_affected_rows($this->_conn);
 	}
 	
 	/**
@@ -444,7 +444,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	public function last()
 	{
-		return mysql_insert_id($this->_conn);
+		return mysqli_insert_id($this->_conn);
 	}
 	
 	/**
@@ -488,9 +488,9 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	public function rewind($res)
 	{
-		if (mysql_num_rows($res) > 0)
+		if (mysqli_num_rows($res) > 0)
 		{
-			return mysql_data_seek($res, 0);
+			return mysqli_data_seek($res, 0);
 		}
 		
 		return true;
@@ -504,7 +504,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	protected function _escape($str)
 	{
-		return mysql_real_escape_string($str, $this->_conn);
+		return mysqli_real_escape_string($str, $this->_conn);
 	}
 	
 	/**
@@ -515,7 +515,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	protected function _count($res)
 	{
-		return mysql_num_rows($res);
+		return mysqli_num_rows($res);
 	}
 	
 	/**
