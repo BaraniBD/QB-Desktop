@@ -10,7 +10,7 @@
   <FileID>{57F3B9B6-86F1-4FCC-B1FF-967DE1813D20}</FileID>
   <QBType>QBFS</QBType>
   <Scheduler>
-    <RunEveryNMinutes>2</RunEveryNMinutes>
+    <RunEveryNMinutes>1</RunEveryNMinutes>
   </Scheduler>
   <IsReadOnly>false</IsReadOnly>
 </QBWCXML>
