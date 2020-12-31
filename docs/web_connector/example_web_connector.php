@@ -44,7 +44,7 @@ if (function_exists('date_default_timezone_set'))
 {
 	// * MAKE SURE YOU SET THIS TO THE CORRECT TIMEZONE! *
 	// List of valid timezones is here: http://us3.php.net/manual/en/timezones.php
-	date_default_timezone_set('America/New_York');
+	date_default_timezone_set('Asia/Kolkata');
 }
 
 // There are some constants you can define to override some default... 
@@ -67,7 +67,7 @@ require_once '../../QuickBooks.php';
 // 	NOTE: This has *no relationship* with QuickBooks usernames, Windows usernames, etc. 
 // 		It is *only* used for the Web Connector and SOAP server! 
 $user = 'quickbooks';
-$pass = 'Yaali@2019';
+$pass = '';
 
 // The next three parameters, $map, $errmap, and $hooks, are callbacks which 
 //	will be called when certain actions/events/requests/responses occur within 
