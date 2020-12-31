@@ -288,12 +288,12 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		if ($port)
 		{
 			echo "port_available";
-			$this->_conn = mysqli_connect($host . ':' . $port, $user, $pass, $new_link, $client_flags) or die('host: ' . $host . ', user: ' . $user . ', pass: , mysqli_error(): ' . mysqli_error());
+			$this->_conn = mysqli_connect($host . ':' . $port, $user, $pass, $db, $new_link, $client_flags) or die('host: ' . $host . ', user: ' . $user . ', pass: , db:'.$db.', mysqli_error(): ' . mysqli_error());
 		}
 		else
 		{
 			echo "port not available";
-			$this->_conn = mysqli_connect($host, $user, $pass, $new_link, $client_flags) or die('host: ' . $host . ', user: ' . $user . ', pass: , mysqli_error(): ' . mysqli_error());
+			$this->_conn = mysqli_connect($host, $user, $pass, $db, $new_link, $client_flags) or die('host: ' . $host . ', user: ' . $user . ', pass: , mysqli_error(): ' . mysqli_error());
 		}
 			
 		// Select the correct database
