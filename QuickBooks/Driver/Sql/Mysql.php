@@ -302,7 +302,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		$tmp = mysqli_select_db($link , $db ) or die(mysqli_error());
 		
 		// Support UTF-8 chars
-		mysqli_query($link,"SET NAMES 'utf8'");
+		// mysqli_query($link,"(SELECT * FROM )");
 		
 		/*
 		static $connections = array();
@@ -348,8 +348,8 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 			// @todo Should this be implemented...?
 		}
 		
-		//print($sql . "\n\n");
-		$res = mysql_query( $link,$sql);
+		print($sql . "\n\n");
+		$res = mysql_query($link,$sql);
 		//mysql_query("INSERT INTO quickbooks_log ( msg, log_datetime ) VALUES ( '" . mysql_real_escape_string($sql) . "', NOW() ) ");
 		
 		/*
