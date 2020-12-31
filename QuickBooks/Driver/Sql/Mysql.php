@@ -302,7 +302,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		$tmp = mysqli_select_db($link , $db ) or die(mysqli_error());
 		
 		// Support UTF-8 chars
-		mysqli_query("SET NAMES 'utf8'", $link);
+		mysqli_query($link,"SET NAMES 'utf8'");
 		
 		/*
 		static $connections = array();
