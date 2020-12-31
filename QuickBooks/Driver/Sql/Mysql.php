@@ -288,7 +288,9 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		if ($port)
 		{
 			echo "port_available";
+			
 			$this->_conn = mysqli_connect($host . ':' . $port, $user, $pass, $db, $new_link, $client_flags) or die('host: ' . $host . ', user: ' . $user . ', pass: , db:'.$db.', mysqli_error(): ' . mysqli_error());
+			$link = mysqli_connect($host , $user, $pass, $db);
 		}
 		else
 		{
@@ -297,7 +299,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		}
 			
 		// Select the correct database
-		$tmp = mysqli_select_db($this->_conn, $db ) or die(mysqli_error());
+		$tmp = mysqli_select_db($link , $db ) or die(mysqli_error());
 		
 		// Support UTF-8 chars
 		mysqli_query("SET NAMES 'utf8'", $this->_conn);
