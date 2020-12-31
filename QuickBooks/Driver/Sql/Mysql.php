@@ -282,7 +282,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 * @param integer $client_flags		Database connection flags (see the PHP/MySQL documentation)
 	 * @return boolean
 	 */
-	$link = mysqli_connect($host , $user, $pass, $db);
+	// $link = mysqli_connect($host , $user, $pass, $db);
 	protected function _connect($host, $port, $user, $pass, $db, $new_link, $client_flags)
 	{
 		echo $db;
@@ -350,7 +350,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		}
 		
 		print($sql . "\n\n");
-		$res = mysqli_query($link,$sql);
+		$res = mysqli_query($this->_conn,$sql);
 		//mysql_query("INSERT INTO quickbooks_log ( msg, log_datetime ) VALUES ( '" . mysql_real_escape_string($sql) . "', NOW() ) ");
 		
 		/*
