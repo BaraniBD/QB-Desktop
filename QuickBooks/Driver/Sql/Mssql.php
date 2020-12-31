@@ -229,8 +229,8 @@ class QuickBooks_Driver_Sql_Mssql extends QuickBooks_Driver_Sql
 			$defaults = array(
 				'scheme' => 'mssql', 
 				'host' => 'localhost', 
-				'port' => 1433, 
-				'user' => 'admin', 
+				'port' => 3306, 
+				'user' => 'root', 
 				'pass' => '', 
 				'path' => '/quickbooks',
 				);
