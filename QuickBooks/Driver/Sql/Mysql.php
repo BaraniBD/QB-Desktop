@@ -322,7 +322,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 	 */
 	protected function _fetch($res)
 	{
-		return mysql_fetch_assoc($res);
+		return mysqli_fetch_assoc($res);
 	}
 	
 	/**
