@@ -349,7 +349,7 @@ class QuickBooks_Driver_Sql_Mysql extends QuickBooks_Driver_Sql
 		}
 		
 		print($sql . "\n\n");
-		$res = mysql_query($link,$sql);
+		$res = mysqli_query($link,$sql);
 		//mysql_query("INSERT INTO quickbooks_log ( msg, log_datetime ) VALUES ( '" . mysql_real_escape_string($sql) . "', NOW() ) ");
 		
 		/*
