@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <QBWCXML>
-  <AppName>QuickBooks Integrator</AppName>
+  <AppName>QuickBooks Webconnector</AppName>
   <AppID></AppID>
   <AppURL>http://localhost/Github/My_Projects/QB-Desktop/docs/web_connector/example_web_connector.php</AppURL>
   <AppDescription></AppDescription>
