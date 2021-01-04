@@ -67,7 +67,7 @@ require_once '../../QuickBooks.php';
 // 	NOTE: This has *no relationship* with QuickBooks usernames, Windows usernames, etc. 
 // 		It is *only* used for the Web Connector and SOAP server! 
 $user = 'quickbooks';
-$pass = 'Yaali@2019';
+$pass = 'Yaali';
 
 // The next three parameters, $map, $errmap, and $hooks, are callbacks which 
 //	will be called when certain actions/events/requests/responses occur within 
