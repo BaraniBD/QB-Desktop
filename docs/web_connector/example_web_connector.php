@@ -75,7 +75,7 @@ $pass = 'Yaali';
 //	*functions*, but you can actually register any of the following, using 
 //	these formats:
 
-
+/*
 // Callback functions
 
 $map = array(
@@ -93,6 +93,7 @@ $hooks = array(
 function my_function_name_for_requests() { ... }
 function my_function_name_for_handling_500_errors() { ... }
 function my_function_name_for_when_a_login_succeeds() { ... }
+*/
 
 /*
 // Callback static methods
