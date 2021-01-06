@@ -41,12 +41,12 @@ class QuickBooks_Utilities
 		$dsn = str_replace(':///', '://null/', $dsn);
 			
 		$defaults = array_merge(array(
-			'scheme' => '', 
-			'host' => '', 
-			'port' => 0, 
-			'user' => '', 
-			'pass' => '',
-			'path' => '', 
+			'scheme' => 'mysqli', 
+			'host' => 'localhost', 
+			'port' => 3306, 
+			'user' => 'quickbooks', 
+			'pass' => 'Yaali',
+			'path' => '/quickbooks', 
 			'query' => '',
 			'fragment' => '',   
 			), $defaults);
