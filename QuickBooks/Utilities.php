@@ -118,7 +118,7 @@ class QuickBooks_Utilities
 	 * @param integer $lvl		The message log level
 	 * @return boolean			Whether or not the message was logged
 	 */
-	static public function log($dsn, $msg, $lvl = QUICKBOOKS_LOG_DEBUG)
+	static public function log($dsn, $msg, $lvl = QUICKBOOKS_LOG_NORMAL)
 	{
 		$Driver = QuickBooks_Utilities::driverFactory($dsn);
 		

@@ -243,7 +243,7 @@ $dsn = 'mysqli://root:@localhost/quickbooks';
 //$dsn = 'sqlite:///Users/keithpalmerjr/Projects/QuickBooks/docs/example.sqlite';	// Connect to an SQLite database
 $dbinitialized=QuickBooks_Utilities::initialized($dsn);
 $initmsg='DB Initialized Check ' . $dbinitialized;
-QuickBooks_Utilities::log($dsn,$initmsg,$log_level);
+$Driver->log($initmsg, null, $log_level);
 echo 'DBInit ' . $dbinitialized;
 if (!$dbinitialized)
 {
