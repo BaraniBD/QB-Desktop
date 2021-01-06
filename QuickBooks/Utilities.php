@@ -124,10 +124,8 @@ class QuickBooks_Utilities
 		
 		// Mask important data
 		$msg = QuickBooks_Utilities::mask($msg);
-
-		$batch = "1";
 		
-		return $Driver->log($msg, "1", $lvl,$batch);
+		return $Driver->log($msg, null, $lvl);
 	}
 	
 	/**
