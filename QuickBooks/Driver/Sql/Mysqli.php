@@ -213,7 +213,7 @@ class QuickBooks_Driver_Sql_Mysqli extends QuickBooks_Driver_Sql
 				'port' => 3306, 
 				'user' => 'root', 
 				'pass' => '', 
-				'path' => '/quickbooks',
+				'path' => '/quickbooks_connector',
 				);
 			
 			$parse = QuickBooks_Utilities::parseDSN($dsn_or_conn, $defaults);

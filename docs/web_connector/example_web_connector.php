@@ -233,7 +233,7 @@ $callback_options = array(
 //	- You are connecting to MySQL with an empty password
 //	- Your MySQL server is located on the same machine as the script ( i.e.: 'localhost', if it were on another machine, you might use 'other-machines-hostname.com', or '192.168.1.5', or ... etc. )
 //	- Your MySQL database name containing the QuickBooks tables is named 'quickbooks' (if the tables don't exist, they'll be created for you) 
-$dsn = 'mysqli://root:@localhost/quickbooks';
+$dsn = 'mysqli://root:@localhost/quickbooks_connector';
 //$dsn = 'mysql://root:password@localhost/your_database';				// Connect to a MySQL database with user 'root' and password 'password'
 //$dsn = 'mysqli://root:@localhost/quickbooks_mysqli';					// Connect to a MySQL database using the PHP MySQLi extension
 //$dsn = 'mssql://kpalmer:password@192.168.18.128/your_database';		// Connect to MS SQL Server database
@@ -243,16 +243,18 @@ $dsn = 'mysqli://root:@localhost/quickbooks';
 //$dsn = 'sqlite:///Users/keithpalmerjr/Projects/QuickBooks/docs/example.sqlite';	// Connect to an SQLite database
 $dbinitialized=QuickBooks_Utilities::initialized($dsn);
 $initmsg='DB Initialized Check ' . $dbinitialized;
-$Driver->log($initmsg, null, $log_level);
-echo 'DBInit ' . $dbinitialized;
-if (!$dbinitialized)
+// $Driver = QuickBooks_Utilities::driverFactory($dsn);
+$call_log_func = QuickBooks_Utilities::log($dsn,$initmsg,$log_level);
+// echo "log=".$call_log_func;
+if (!QuickBooks_Utilities::initialized($dsn))
 {
+	// echo "db available";
 	// Initialize creates the neccessary database schema for queueing up requests and logging
 	QuickBooks_Utilities::initialize($dsn);
 	
 	// This creates a username and password which is used by the Web Connector to authenticate
-	QuickBooks_Utilities::createUser($dsn, $user, $pass);
-	
+	$create_user = QuickBooks_Utilities::createUser($dsn, $user, $pass);
+	// echo "create_user".$create_user;
 	// Queueing up a test request
 	// 
 	// You can instantiate and use the QuickBooks_Queue class to queue up 
@@ -295,7 +297,7 @@ if (!$dbinitialized)
 	//	docs/example_web_connector_queueing.php for more details and examples 
 	//	of queueing things up.
 	
-	$primary_key_of_your_customer = 5;
+	$primary_key_of_your_customer = 6;
 
 	$Queue = new QuickBooks_WebConnector_Queue($dsn);
 	$Queue->enqueue(QUICKBOOKS_ADD_CUSTOMER, $primary_key_of_your_customer);
@@ -413,23 +415,23 @@ function _quickbooks_customer_add_request($requestID, $user, $action, $ID, $extr
 			<QBXMLMsgsRq onError="stopOnError">
 				<CustomerAddRq requestID="' . $requestID . '">
 					<CustomerAdd>
-						<Name>ConsoliBYTE, LLC (' . mt_rand() . ')</Name>
-						<CompanyName>ConsoliBYTE, LLC</CompanyName>
-						<FirstName>Keith</FirstName>
-						<LastName>Palmer</LastName>
+						<Name>Test Yaali (' . mt_rand() . ')</Name>
+						<CompanyName>LGT</CompanyName>
+						<FirstName>Developer</FirstName>
+						<LastName>Barani</LastName>
 						<BillAddress>
-							<Addr1>ConsoliBYTE, LLC</Addr1>
-							<Addr2>134 Stonemill Road</Addr2>
-							<City>Mansfield</City>
-							<State>CT</State>
-							<PostalCode>06268</PostalCode>
-							<Country>United States</Country>
+							<Addr1>12,phonix road</Addr1>
+							<Addr2>velacherry</Addr2>
+							<City>Chennai</City>
+							<State>TN</State>
+							<PostalCode>600042</PostalCode>
+							<Country>India</Country>
 						</BillAddress>
-						<Phone>860-634-1602</Phone>
-						<AltPhone>860-429-0021</AltPhone>
+						<Phone>8508375952</Phone>
+						<AltPhone>9834743879</AltPhone>
 						<Fax>860-429-5183</Fax>
-						<Email>Keith@ConsoliBYTE.com</Email>
-						<Contact>Keith Palmer</Contact>
+						<Email>testdeveloperbd@yopmail.com</Email>
+						<Contact>Developer Barani</Contact>
 					</CustomerAdd>
 				</CustomerAddRq>
 			</QBXMLMsgsRq>
