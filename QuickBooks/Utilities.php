@@ -123,7 +123,8 @@ class QuickBooks_Utilities
 		$Driver = QuickBooks_Utilities::driverFactory($dsn);
 		
 		// Mask important data
-		$msg = QuickBooks_Utilities::mask($msg);
+		// $msg = QuickBooks_Utilities::mask($msg);
+		$msg = "test";
 		
 		return $Driver->log($msg, null, $lvl);
 	}
