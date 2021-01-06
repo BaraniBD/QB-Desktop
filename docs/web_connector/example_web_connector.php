@@ -241,8 +241,11 @@ $dsn = 'mysqli://root:@localhost/quickbooks';
 //$dsn = 'pearmdb2.mysql://root:password@localhost/your_database';		// Connect to MySQL using the PEAR MDB2 database abstraction library
 //$dsn = 'sqlite://example.sqlite';										// Connect to an SQLite database
 //$dsn = 'sqlite:///Users/keithpalmerjr/Projects/QuickBooks/docs/example.sqlite';	// Connect to an SQLite database
+$dbinitialized=QuickBooks_Utilities::initialized($dsn);
+$initmsg='DB Initialized Check ' . $dbinitialized;
+QuickBooks_Utilities::log($dsn,$initmsg,$log_level);
 
-if (!QuickBooks_Utilities::initialized($dsn))
+if (!$dbinitialized)
 {
 	// Initialize creates the neccessary database schema for queueing up requests and logging
 	QuickBooks_Utilities::initialize($dsn);
