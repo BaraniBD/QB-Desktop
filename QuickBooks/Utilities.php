@@ -127,7 +127,7 @@ class QuickBooks_Utilities
 
 		$batch = "1";
 		
-		return $Driver->log($msg, null, $lvl,$batch);
+		return $Driver->log($msg, "1", $lvl,$batch);
 	}
 	
 	/**
