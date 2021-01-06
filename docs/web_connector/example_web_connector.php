@@ -244,7 +244,7 @@ $dsn = 'mysqli://root:@localhost/quickbooks';
 $dbinitialized=QuickBooks_Utilities::initialized($dsn);
 $initmsg='DB Initialized Check ' . $dbinitialized;
 QuickBooks_Utilities::log($dsn,$initmsg,$log_level);
-
+echo 'DBInit ' . $dbinitialized;
 if (!$dbinitialized)
 {
 	// Initialize creates the neccessary database schema for queueing up requests and logging
